@@ -8,28 +8,35 @@ import "./App.css";
 function App() {
   const [robots, setRobots] = useState([]);
   const [searchfield, setSearchfield] = useState("");
+  const [filteredBots, setFilteredBots] = useState([]);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
     .then(res => res.json())
     .then((users) => {
       setRobots(users);
+      setFilteredBots(users);
     });
   }, []);
 
-  const filteredRobots = robots.filter((robots) => {
-    return robots.name
-      .toLowerCase()
-      .includes(searchfield.toLowerCase());
-  });
+  useEffect(() => {
+    console.log("in effect")
+    const newFilteredRobots = robots.filter((robots) => {
+      return robots.name
+        .toLowerCase()
+        .includes(searchfield.toLowerCase());
+    });
+    setFilteredBots(newFilteredRobots);
+  }, [robots, searchfield]);
 
+  console.log("render")
   return (
     <div className="tc">
     <h1 className="f1">RoBros</h1>
     <SearchBox searchChange={(event) => setSearchfield(event.target.value)} />
     <Scroll>
       <ErrorBoundary>
-        <CardList robots={filteredRobots} />
+        <CardList robots={filteredBots} />
       </ErrorBoundary>
     </Scroll>
   </div>
