@@ -28,3 +28,22 @@ To get a local copy up and running, follow these steps:
 
 3. Start the development server:
    npm start
+
+Your local copy of RoBros will be available at `http://localhost:3000`.
+
+## 🎯 Live Demo 🎯
+
+Check out RoBros live in action [here](https://jkracz.github.io/robros/).
+
+## 📫 Contact 📫
+
+Joe Kracz - joseph.kracz@gmail.com
+
+Project Link: [https://github.com/jkracz/robros](https://github.com/jkracz/robros)
+
+## ✨ Acknowledgements ✨
+
+- [Create React App](https://github.com/facebook/create-react-app)
+- [Tachyons](https://tachyons.io/)
+- [JSON Placeholder](https://jsonplaceholder.typicode.com/users)
+- [Robohash](https://robohash.org/)
